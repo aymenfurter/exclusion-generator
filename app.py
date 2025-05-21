@@ -70,17 +70,17 @@ def main():
         with gr.Row():
             with gr.Column(scale=1):
                 confidence_threshold = gr.Slider(
-                    minimum=1, 
-                    maximum=100, 
-                    value=60, 
-                    step=1, 
+                    minimum=1,
+                    maximum=100,
+                    value=60,
+                    step=1,
                     label="Confidence Threshold (%)",
                     info="Only consider PII detections with confidence above this threshold"
                 )
             with gr.Column(scale=1):
                 min_entities_threshold = gr.Number(
-                    value=2, 
-                    precision=0, 
+                    value=2,
+                    precision=0,
                     label="Minimum PII Entities",
                     info="Minimum number of PII entities required to flag a file",
                     minimum=1,
