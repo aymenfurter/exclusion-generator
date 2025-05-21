@@ -1,67 +1,68 @@
+<div align="center">
+
 # GitHub Copilot Exclusion Generator
+
+<img src="preview.png" alt="GitHub Copilot Exclusion Generator Preview" width="85%" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); margin: 25px 0;">
+
+**Protect your sensitive data by generating optimal GitHub Copilot exclusion rules**
 
 [![CI](https://github.com/aymenfurter/exclusion-generator/actions/workflows/ci.yml/badge.svg)](https://github.com/aymenfurter/exclusion-generator/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
-A tool to help generate GitHub Copilot exclusion rules for your repository, particularly focusing on files with potential PII (Personally Identifiable Information).
+</div>
 
-## Features
+## 📋 Overview
 
-- Scan your repository for potential PII in text files
-- Apply language-specific presets to automatically exclude common non-source files
-- Customize exclusion patterns to match your project's needs
-- Generate GitHub Copilot compatible exclusion rules for your repository
+The GitHub Copilot Exclusion Generator helps you protect sensitive information in your repositories by automatically identifying files that might contain PII (Personally Identifiable Information) and generating appropriate exclusion rules for GitHub Copilot.
 
-## Installation
+> ⚠️ **Important Note:** This tool is intended as a quality assurance step or temporary fix. PII and sensitive data should **not** be committed to repositories as-is. Always follow proper data governance practices by removing, encrypting, or using appropriate methods like environment variables for sensitive information before committing code.
 
-1. Clone the repository:
+### Key Benefits
+
+- ✅ **Protect Privacy** - Prevent potential PII from beeing transmitted outside your organization
+- ✅ **Save Time** - Automatically scan repositories instead of manual review
+- ✅ **Customizable** - Tailor detection sensitivity and exclusion patterns to your needs
+- ✅ **Smart Defaults** - Language-specific presets for common exclusion patterns
+
+## 🚀 Quick Start
+
 ```bash
+# Clone and install
 git clone https://github.com/aymenfurter/exclusion-generator.git
 cd exclusion-generator
-```
-
-2. Install the required dependencies:
-```bash
 pip install -r requirements.txt
-```
 
-## Usage
-
-1. Start the application:
-```bash
+# Run the app
 python app.py
+
+# Access via browser at http://localhost:7860
 ```
 
-2. Open the web interface (typically at http://localhost:7860)
 
-3. Use the UI to:
-   - Select your repository folder
-   - Choose language presets for automatic exclusion patterns
-   - Add custom exclusion patterns if needed
-   - Configure PII detection sensitivity
-   - Run the scan
+## ⚙️ Configuration Options
 
-4. Copy the generated exclusion rules into your GitHub Copilot configuration
+### PII Detection Settings
 
-## Configuration Options
+- **Confidence Threshold**: Minimum confidence level (%) required for PII detection
+- **Minimum PII Entities**: Number of PII items needed to flag a file
+- **PII Entity Types**: Customize which types to scan for:
+  - PERSON
+  - EMAIL_ADDRESS
+  - PHONE_NUMBER
+  - USERNAME
+  - PASSWORD
+  - and more...
 
-- **Confidence Threshold**: Set the minimum confidence level (percentage) required for PII detection
-- **Minimum PII Entities**: Set the minimum number of PII entities required to flag a file
-- **PII Entity Types**: Select which types of PII to scan for (e.g., PERSON, EMAIL_ADDRESS, etc.)
-- **Preset Exclusions**: Choose from language-specific presets to exclude common non-source files
-- **Custom Exclusions**: Add comma-separated patterns to exclude additional files
+### Exclusion Options
 
-## Contributing
+- **Preset Exclusions**: Language-specific presets (Python, JavaScript, etc.)
+- **Custom Exclusions**: Add your own patterns as comma-separated values
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+## 🔍 How It Works
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Run the tests to make sure everything works (`pytest`)
-4. Commit your changes (`git commit -m 'Add some amazing feature'`)
-5. Push to the branch (`git push origin feature/amazing-feature`)
-6. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+1. The tool scans your repository for text files
+2. Each file is analyzed using NLP techniques to detect potential PII
+3. Files are flagged based on your configured sensitivity settings
+4. The tool generates GitHub Copilot exclusion rules based on detection results
+5. Additional exclusions are added based on your selected presets
