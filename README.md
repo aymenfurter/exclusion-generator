@@ -2,7 +2,7 @@
 
 # GitHub Copilot Exclusion Generator
 
-<img src="preview.png" alt="GitHub Copilot Exclusion Generator Preview" width="85%" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); margin: 25px 0;">
+<img src="preview.png" alt="GitHub Copilot Exclusion Generator Preview" width="90%" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); margin: 25px 0;">
 
 **Protect your sensitive data by generating optimal GitHub Copilot exclusion rules**
 
