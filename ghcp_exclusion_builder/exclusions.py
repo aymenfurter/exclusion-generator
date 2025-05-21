@@ -114,14 +114,12 @@ def is_excluded(item_path_normalized, exclusion_patterns):
             if dir_base.startswith('/'):
                 dir_base_no_slash = dir_base.lstrip('/')
                 if (
-                    item_path_normalized.startswith(dir_base_no_slash + '/') or
-                    item_path_normalized == dir_base_no_slash
+                    item_path_normalized.startswith(dir_base_no_slash + '/') or item_path_normalized == dir_base_no_slash
                 ):
                     return True
             else:
                 if (
-                    item_path_normalized.startswith(dir_base + '/') or
-                    item_path_normalized == dir_base
+                    item_path_normalized.startswith(dir_base + '/') or item_path_normalized == dir_base
                 ):
                     return True
                 if (

@@ -14,7 +14,7 @@ PII_ENTITY_TYPES = [
     "CREDIT_CARD",
     "DATE_TIME",
     "LOCATION",
-    "US_SSN", 
+    "US_SSN",
     "US_DRIVER_LICENSE",
     "IP_ADDRESS",
     "URL",

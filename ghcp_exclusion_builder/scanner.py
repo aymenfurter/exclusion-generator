@@ -152,7 +152,7 @@ def scan_directory_for_pii(
 
         # Analyze file content for PII
         analyzer_results = analyzer.analyze(
-            text=content, 
+            text=content,
             language='en',
             entities=selected_entity_types  # Only analyze for selected entity types
         )
@@ -184,10 +184,10 @@ def scan_directory_for_pii(
                 path_for_comment = relative_file_path_normalized
             else:
                 path_for_comment = f"/{relative_file_path_normalized}"
-                
+            
             # Include PII type information in the comment
-            pii_description = ", ".join([f"{count} {pii_type}" 
-                                       for pii_type, count in pii_types.items()])
+            pii_description = ", ".join([f"{count} {pii_type}"
+                                        for pii_type, count in pii_types.items()])
             
             pii_files_output_lines.append(
                 f"# Ignore the `{path_for_comment}` file in this repository (Contains: {pii_description})."
